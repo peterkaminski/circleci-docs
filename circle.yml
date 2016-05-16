@@ -12,6 +12,10 @@ dependencies:
     - JEKYLL_ENV=production bundle exec jekyll build --config jekyll/_config.yml,jekyll/_config_staging.yml --source jekyll --destination jekyll/_staging_site/docs/ --future --drafts --unpublished
 test:
   post:
+    # Search for internal links not using {{ site.baseurl }}
+    - grep -r "/docs/" jekyll/docs | grep -v "site.baseurl"
+    # Search for internal links that don't have a trailing slash
+    - grep -r "site.baseurl" . | grep -v "/)" | grep -v "#" | grep -v "/assets/"
     # --empty-alt-ignore is temporary
     - bundle exec htmlproofer jekyll/_site --allow-hash-href --check-favicon --check-html --disable-external --empty-alt-ignore | tee $CIRCLE_ARTIFACTS/htmlproofer-results.txt; exit ${PIPESTATUS[0]}
 deployment:
