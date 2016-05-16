@@ -13,9 +13,9 @@ dependencies:
 test:
   post:
     # Search for internal links not using {{ site.baseurl }}
-    - grep -r "/docs/" jekyll/docs | grep -v "site.baseurl"
+    - grep -r "/docs/" jekyll/_docs | grep -v "site.baseurl"
     # Search for internal links that don't have a trailing slash
-    - grep -r "site.baseurl" . | grep -v "/)" | grep -v "#" | grep -v "/assets/"
+    - grep -r "site.baseurl" jekyll_docs | grep -v "/)" | grep -v "#" | grep -v "/assets/"
     # --empty-alt-ignore is temporary
     - bundle exec htmlproofer jekyll/_site --allow-hash-href --check-favicon --check-html --disable-external --empty-alt-ignore | tee $CIRCLE_ARTIFACTS/htmlproofer-results.txt; exit ${PIPESTATUS[0]}
 deployment:
