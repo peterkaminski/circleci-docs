@@ -18,7 +18,7 @@ Prerequisites
 * AWS VPC ID
 	* Ensure that your VPC has the setting [enableDNSSupport](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-dns.html#vpc-dns-updating) 
 	set to true
-	* Instructions if you have a [Private Subnet](({{site.baseurl}}/enterprise/aws-private-subnet))
+	* Instructions if you have a [Private Subnet]({{site.baseurl}}/enterprise/aws-private-subnet/)
 * AWS Subnet ID
 * AWS S3 Bucket Name
 * Services Instance Type
@@ -81,7 +81,7 @@ Using Circle CI Enterprise
     <ol>
       <li>Click the "Open" link in the dashboard to go to the CircleCI Enterprise app. You may see a "Starting" page for a few minutes to indicate that the CircleCI
           application is booting up, but you will soon be automatically redirected to the homepage for your CircleCI Enterprise installation.</li>
-      <li>Sign up and follow a project (see a <a href="/user-documentation/quick-start">video walkthrough</a>)</li>
+      <li>Sign up and follow a <a href="/docs/enterprise/quick-start/">project</a></li>
       <li>The first build may remain queued while the build containers start. You can check the "Fleet State" by clicking on the wrench icon on the sidebar and selecting "Fleet State".
 If no instances appear in the list, then the first builder is still starting. If there is a builder instance in the list but its state is "starting-up", then it is still downloading the build container image and starting its first build containers. Once this is all done, the first build should begin immediately. If there are no updates after about 15 minutes (remember to click the "refresh" button occasionally), please contact <a href="mailto:enterprise-support@circleci.com">CircleCI Enterprise support</a>.</li>
     </ol>
